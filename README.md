@@ -1,2 +1,2 @@
 # FiTimestamp
-TimestampToData or DateToTimestamp for SA:MP (PAWN)
+TimestampToDate or DateToTimestamp for SA:MP (PAWN)
