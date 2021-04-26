@@ -1,7 +1,7 @@
 /*****************************************************************
 
                     FiTimestamp by ZTzTopia
-                        v0.1.2
+                        v0.1.3
 
 *****************************************************************/
 
@@ -139,6 +139,11 @@ stock TimestampToDate(Timestamp, &year, &month, &day, &hour, &minute, &second, H
         }
         Timestamp -= 3600;
     }
+    if(hour >= 24)
+    {
+        hour = 0;
+        day++;
+    }
     for(minute = MinuteGMT; Timestamp >= 60; minute++)
     {
         if(minute >= 60)
@@ -147,6 +152,11 @@ stock TimestampToDate(Timestamp, &year, &month, &day, &hour, &minute, &second, H
             hour++;
         }
         Timestamp -= 60;
+    }
+    if(minute >= 60)
+    {
+        minute = 0;
+        hour++;
     }
     if(second >= 60)
     {
